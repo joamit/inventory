@@ -2,12 +2,12 @@ package io.joamit.inventory.domain.category;
 
 import io.joamit.inventory.domain.BaseEntity;
 
-public abstract class AbstractCategory extends BaseEntity {
+public abstract class Category extends BaseEntity implements CategoryPath {
 
     /**
      * Holds parent category
      */
-    protected AbstractCategory parent;
+    protected Category parent;
 
     /**
      * Holds Left element id
@@ -45,11 +45,11 @@ public abstract class AbstractCategory extends BaseEntity {
      */
     private Boolean expanded = true;
 
-    public AbstractCategory getParent() {
+    public Category getParent() {
         return parent;
     }
 
-    public void setParent(AbstractCategory parent) {
+    public void setParent(Category parent) {
         this.parent = parent;
     }
 
