@@ -28,7 +28,8 @@ public abstract class BaseEntity {
 
     @Override
     public String toString() {
-        return "BaseEntity{" +
+        return this.getClass()
+                .getCanonicalName() + " {" +
                 "id=" + id +
                 '}';
     }

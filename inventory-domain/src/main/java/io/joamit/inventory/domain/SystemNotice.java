@@ -30,7 +30,7 @@ public class SystemNotice extends BaseEntity {
      * Holds acknowledgement status of the notice
      */
     @Column
-    private Boolean acknowledged;
+    private Boolean acknowledged = false;
 
     /**
      * Holds notice type
