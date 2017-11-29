@@ -97,8 +97,8 @@ public class Part extends BaseEntity {
     /**
      * Holds meta information about the part parameters
      */
-    @OneToMany(targetEntity = PartParameterCriteria.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<PartParameterCriteria> partParameterCriterias;
+    @OneToMany(targetEntity = MetaPartParameterCriteria.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<MetaPartParameterCriteria> metaPartParameterCriterias;
 
     /**
      * Holds part status information
@@ -135,4 +135,224 @@ public class Part extends BaseEntity {
      * Holds information about internal part number if any
      */
     private String internalPartNumber;
+
+    private Boolean removals = false;
+
+    private Boolean lowStock = false;
+
+    private Boolean metaPart = false;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Footprint getFootprint() {
+        return footprint;
+    }
+
+    public void setFootprint(Footprint footprint) {
+        this.footprint = footprint;
+    }
+
+    public PartMeasurementUnit getPartMeasurementUnit() {
+        return partMeasurementUnit;
+    }
+
+    public void setPartMeasurementUnit(PartMeasurementUnit partMeasurementUnit) {
+        this.partMeasurementUnit = partMeasurementUnit;
+    }
+
+    public StorageLocation getStorageLocation() {
+        return storageLocation;
+    }
+
+    public void setStorageLocation(StorageLocation storageLocation) {
+        this.storageLocation = storageLocation;
+    }
+
+    public List<PartManufacturer> getPartManufacturers() {
+        return partManufacturers;
+    }
+
+    public void setPartManufacturers(List<PartManufacturer> partManufacturers) {
+        this.partManufacturers = partManufacturers;
+    }
+
+    public List<PartDistributor> getPartDistributors() {
+        return partDistributors;
+    }
+
+    public void setPartDistributors(List<PartDistributor> partDistributors) {
+        this.partDistributors = partDistributors;
+    }
+
+    public List<PartAttachment> getPartAttachments() {
+        return partAttachments;
+    }
+
+    public void setPartAttachments(List<PartAttachment> partAttachments) {
+        this.partAttachments = partAttachments;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Long getStock() {
+        return stock;
+    }
+
+    public void setStock(Long stock) {
+        this.stock = stock;
+    }
+
+    public Long getMinStockLevel() {
+        return minStockLevel;
+    }
+
+    public void setMinStockLevel(Long minStockLevel) {
+        this.minStockLevel = minStockLevel;
+    }
+
+    public Double getAveragePrice() {
+        return averagePrice;
+    }
+
+    public void setAveragePrice(Double averagePrice) {
+        this.averagePrice = averagePrice;
+    }
+
+    public List<StockEntry> getStockEntries() {
+        return stockEntries;
+    }
+
+    public void setStockEntries(List<StockEntry> stockEntries) {
+        this.stockEntries = stockEntries;
+    }
+
+    public List<PartParameter> getPartParameters() {
+        return partParameters;
+    }
+
+    public void setPartParameters(List<PartParameter> partParameters) {
+        this.partParameters = partParameters;
+    }
+
+    public List<MetaPartParameterCriteria> getMetaPartParameterCriterias() {
+        return metaPartParameterCriterias;
+    }
+
+    public void setMetaPartParameterCriterias(List<MetaPartParameterCriteria> metaPartParameterCriterias) {
+        this.metaPartParameterCriterias = metaPartParameterCriterias;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Boolean getNeedsReview() {
+        return needsReview;
+    }
+
+    public void setNeedsReview(Boolean needsReview) {
+        this.needsReview = needsReview;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public String getProductionRemarks() {
+        return productionRemarks;
+    }
+
+    public void setProductionRemarks(String productionRemarks) {
+        this.productionRemarks = productionRemarks;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public List<ProjectPart> getProjectParts() {
+        return projectParts;
+    }
+
+    public void setProjectParts(List<ProjectPart> projectParts) {
+        this.projectParts = projectParts;
+    }
+
+    public String getInternalPartNumber() {
+        return internalPartNumber;
+    }
+
+    public void setInternalPartNumber(String internalPartNumber) {
+        this.internalPartNumber = internalPartNumber;
+    }
+
+    public Boolean getRemovals() {
+        return removals;
+    }
+
+    public void setRemovals(Boolean removals) {
+        this.removals = removals;
+    }
+
+    public Boolean getLowStock() {
+        return lowStock;
+    }
+
+    public void setLowStock(Boolean lowStock) {
+        this.lowStock = lowStock;
+    }
+
+    public Boolean getMetaPart() {
+        return metaPart;
+    }
+
+    public void setMetaPart(Boolean metaPart) {
+        this.metaPart = metaPart;
+    }
+
+    public String getCategoryPath() {
+        if (this.category == null) return "";
+        else return this.category.generateCategoryPath("/");
+    }
+
 }
