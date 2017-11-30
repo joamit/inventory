@@ -3,6 +3,7 @@ package io.joamit.inventory.domain.part;
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.category.Category;
 import io.joamit.inventory.domain.footprint.Footprint;
+import io.joamit.inventory.domain.storage.StorageLocation;
 
 import java.util.Date;
 import java.util.List;
