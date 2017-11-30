@@ -1,8 +1,8 @@
 package io.joamit.inventory.domain.category;
 
-import io.joamit.inventory.domain.BaseEntity;
+import io.joamit.inventory.domain.BaseDocument;
 
-public abstract class Category extends BaseEntity implements CategoryPath {
+public abstract class Category extends BaseDocument implements CategoryPath {
 
     /**
      * Holds parent category

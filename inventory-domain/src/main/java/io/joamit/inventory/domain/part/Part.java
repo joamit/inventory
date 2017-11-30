@@ -1,18 +1,17 @@
 package io.joamit.inventory.domain.part;
 
-import io.joamit.inventory.domain.BaseEntity;
+import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.category.Category;
-import io.joamit.inventory.domain.category.PartCategory;
+import io.joamit.inventory.domain.footprint.Footprint;
 
-import javax.persistence.CascadeType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.List;
 
-public class Part extends BaseEntity {
+public class Part extends BaseDocument {
 
-    @ManyToOne(targetEntity = PartCategory.class)
+    /**
+     * Holds category information for this part
+     */
     private Category category;
 
     /**
@@ -28,38 +27,32 @@ public class Part extends BaseEntity {
     /**
      * Footprint of the part
      */
-    @ManyToOne(targetEntity = Footprint.class)
     private Footprint footprint;
 
     /**
      * The unit of measurement in which part's amount will be calculated. This is required to count the part in
      * "pieces", "meters" or "grams" etc.
      */
-    @ManyToOne(targetEntity = PartMeasurementUnit.class)
     private PartMeasurementUnit partMeasurementUnit;
 
     /**
      * Holds storage location of this part
      */
-    @ManyToOne(targetEntity = StorageLocation.class)
     private StorageLocation storageLocation;
 
     /**
      * Holds information about the partManufacturers which can produce this part
      */
-    @OneToMany(targetEntity = PartManufacturer.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<PartManufacturer> partManufacturers;
 
     /**
      * Holds information about the partDistributors which can distribute this part
      */
-    @OneToMany(targetEntity = PartDistributor.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<PartDistributor> partDistributors;
 
     /**
      * Holds information about part attachments
      */
-    @OneToMany(targetEntity = PartAttachment.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<PartAttachment> partAttachments;
 
     /**
@@ -85,19 +78,16 @@ public class Part extends BaseEntity {
     /**
      * Holds Stock entries for this part. This works as an audit for the part
      */
-    @OneToMany(targetEntity = StockEntry.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<StockEntry> stockEntries;
 
     /**
      * Holds information about the parameters for this part
      */
-    @OneToMany(targetEntity = PartParameter.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<PartParameter> partParameters;
 
     /**
      * Holds meta information about the part parameters
      */
-    @OneToMany(targetEntity = MetaPartParameterCriteria.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<MetaPartParameterCriteria> metaPartParameterCriterias;
 
     /**
@@ -128,7 +118,6 @@ public class Part extends BaseEntity {
     /**
      * Holds information about project parts
      */
-    @OneToMany(targetEntity = ProjectPart.class, mappedBy = "part", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<ProjectPart> projectParts;
 
     /**

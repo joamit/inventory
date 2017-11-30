@@ -1,6 +1,6 @@
 package io.joamit.inventory.domain.part;
 
-import io.joamit.inventory.domain.BaseEntity;
+import io.joamit.inventory.domain.BaseDocument;
 
-public class StockEntry extends BaseEntity {
+public class StockEntry extends BaseDocument {
 }

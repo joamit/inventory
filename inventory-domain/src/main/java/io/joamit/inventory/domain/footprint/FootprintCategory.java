@@ -1,22 +1,17 @@
-package io.joamit.inventory.domain.category;
+package io.joamit.inventory.domain.footprint;
+
+import io.joamit.inventory.domain.category.Category;
 
 import java.util.List;
 
-public class PartCategory extends Category {
+public class FootprintCategory extends Category {
 
-    /**
-     * Holds information about parent category
-     */
     private Category parent;
 
-    /**
-     * Holds information about all related categories
-     */
     private List<Category> children;
 
-    /**
-     * Holds category tree path
-     */
+    private List<Footprint> footprints;
+
     private String categoryPath;
 
     @Override
@@ -35,6 +30,14 @@ public class PartCategory extends Category {
 
     public void setChildren(List<Category> children) {
         this.children = children;
+    }
+
+    public List<Footprint> getFootprints() {
+        return footprints;
+    }
+
+    public void setFootprints(List<Footprint> footprints) {
+        this.footprints = footprints;
     }
 
     public String getCategoryPath() {

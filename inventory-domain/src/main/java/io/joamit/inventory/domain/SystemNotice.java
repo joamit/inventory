@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Holds a system notice
  */
-public class SystemNotice extends BaseEntity {
+public class SystemNotice extends BaseDocument {
 
     /**
      * Holds title of the notice

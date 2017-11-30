@@ -1,28 +1,28 @@
 package io.joamit.inventory.domain;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 
 /**
  * Base Entity for all the domain objects
  */
-@Entity
-public abstract class BaseEntity {
+@Document
+public abstract class BaseDocument {
 
     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     /**
      * Returns the id of the Object
      *
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
