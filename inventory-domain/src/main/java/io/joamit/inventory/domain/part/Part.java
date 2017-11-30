@@ -3,6 +3,8 @@ package io.joamit.inventory.domain.part;
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.category.Category;
 import io.joamit.inventory.domain.footprint.Footprint;
+import io.joamit.inventory.domain.misc.MetaPartParameterCriteria;
+import io.joamit.inventory.domain.misc.StockEntry;
 import io.joamit.inventory.domain.project.ProjectPart;
 import io.joamit.inventory.domain.storage.StorageLocation;
 

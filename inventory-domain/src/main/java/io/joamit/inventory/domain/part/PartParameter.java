@@ -1,6 +1,8 @@
 package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
+import io.joamit.inventory.domain.misc.SiPrefix;
+import io.joamit.inventory.domain.misc.Unit;
 
 public class PartParameter extends BaseDocument {
 

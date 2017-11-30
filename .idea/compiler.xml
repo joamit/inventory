@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="inventory-domain" />
         <module name="inventory-repository" />
+        <module name="inventory-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="inventory" target="1.8" />
       <module name="inventory-domain" target="1.8" />
       <module name="inventory-repository" target="1.8" />
+      <module name="inventory-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,7 +1,7 @@
 package io.joamit.inventory.domain.project;
 
 import io.joamit.inventory.domain.BaseDocument;
-import io.joamit.inventory.domain.part.OverageType;
+import io.joamit.inventory.domain.misc.OverageType;
 import io.joamit.inventory.domain.part.Part;
 
 public class ProjectPart extends BaseDocument {

@@ -1,6 +1,5 @@
 package io.joamit.inventory.domain;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 /**
@@ -11,31 +10,26 @@ public class SystemNotice extends BaseDocument {
     /**
      * Holds title of the notice
      */
-    @Column
     private String title;
 
     /**
      * Holds description of the title
      */
-    @Column
     private String description;
 
     /**
      * Holds time of notice creation
      */
-    @Column
     private Date date;
 
     /**
      * Holds acknowledgement status of the notice
      */
-    @Column
     private Boolean acknowledged = false;
 
     /**
      * Holds notice type
      */
-    @Column
     private String type;
 
     public String getTitle() {

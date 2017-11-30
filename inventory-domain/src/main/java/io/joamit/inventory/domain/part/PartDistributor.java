@@ -1,6 +1,7 @@
 package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
+import io.joamit.inventory.domain.misc.Distributor;
 
 public class PartDistributor extends BaseDocument {
 
