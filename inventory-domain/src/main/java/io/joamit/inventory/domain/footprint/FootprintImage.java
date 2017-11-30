@@ -6,6 +6,16 @@ public class FootprintImage extends BaseDocument {
 
     private Footprint footprint;
 
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Footprint getFootprint() {
         return footprint;
     }
