@@ -1,9 +1,11 @@
 package io.joamit.inventory.domain.project;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class ProjectAttachment extends BaseDocument {
 
+    @DBRef
     private Project project;
 
     private String name;

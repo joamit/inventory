@@ -1,6 +1,7 @@
 package io.joamit.inventory.domain.user;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Date;
 
@@ -22,6 +23,7 @@ public class User extends BaseDocument {
 
     private String initialUserPreferences;
 
+    @DBRef
     private UserProvider userProvider;
 
     private Boolean active;

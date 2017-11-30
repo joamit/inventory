@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Inventory Service" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="io.joamit.inventory.service.Application" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <module name="inventory-service" />
+    <envs />
+    <method />
+  </configuration>
+</component>

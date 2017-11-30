@@ -5,11 +5,6 @@ import io.joamit.inventory.domain.BaseDocument;
 public abstract class Category extends BaseDocument implements CategoryPath {
 
     /**
-     * Holds parent category
-     */
-    protected Category parent;
-
-    /**
      * Holds Left element id
      */
     private Long left;
@@ -44,14 +39,6 @@ public abstract class Category extends BaseDocument implements CategoryPath {
      * Holds expansion information of category tree
      */
     private Boolean expanded = true;
-
-    public Category getParent() {
-        return parent;
-    }
-
-    public void setParent(Category parent) {
-        this.parent = parent;
-    }
 
     public Long getLeft() {
         return left;

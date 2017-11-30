@@ -2,9 +2,11 @@ package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.part.Part;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class MetaPartParameterCriteria extends BaseDocument {
 
+    @DBRef
     private Part part;
 
     private String partParameterName;
@@ -15,12 +17,14 @@ public class MetaPartParameterCriteria extends BaseDocument {
 
     private Double normalizedValue;
 
+    @DBRef
     private SiPrefix siPrefix;
 
     private String valueStr;
 
     private String valueType;
 
+    @DBRef
     private Unit unit;
 
 

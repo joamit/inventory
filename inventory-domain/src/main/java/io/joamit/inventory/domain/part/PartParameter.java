@@ -3,15 +3,18 @@ package io.joamit.inventory.domain.part;
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.misc.SiPrefix;
 import io.joamit.inventory.domain.misc.Unit;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class PartParameter extends BaseDocument {
 
+    @DBRef
     private Part part;
 
     private String name;
 
     private String description;
 
+    @DBRef
     private Unit unit;
 
     private Double value;
@@ -33,10 +36,13 @@ public class PartParameter extends BaseDocument {
 
     private String valueType;
 
+    @DBRef
     private SiPrefix siPrefix;
 
+    @DBRef
     private SiPrefix minSiPrefix;
 
+    @DBRef
     private SiPrefix maxSiPrefix;
 
     public Part getPart() {

@@ -1,13 +1,16 @@
 package io.joamit.inventory.domain.storage;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class StorageLocation extends BaseDocument {
 
     private String name;
 
+    @DBRef
     private StorageLocationImage storageLocationImage;
 
+    @DBRef
     private StorageLocationCategory storageLocationCategory;
 
     public String getName() {

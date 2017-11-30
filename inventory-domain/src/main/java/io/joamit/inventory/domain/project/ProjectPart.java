@@ -3,13 +3,16 @@ package io.joamit.inventory.domain.project;
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.misc.OverageType;
 import io.joamit.inventory.domain.part.Part;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class ProjectPart extends BaseDocument {
 
+    @DBRef
     private Part part;
 
     private Integer quantity;
 
+    @DBRef
     private Project project;
 
     private String remarks;

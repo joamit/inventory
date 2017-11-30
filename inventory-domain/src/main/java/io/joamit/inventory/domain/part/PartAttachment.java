@@ -1,11 +1,13 @@
 package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class PartAttachment extends BaseDocument {
 
     private boolean isImage;
 
+    @DBRef
     private Part part;
 
     private String name;

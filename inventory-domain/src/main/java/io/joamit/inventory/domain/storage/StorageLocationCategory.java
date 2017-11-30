@@ -1,25 +1,27 @@
 package io.joamit.inventory.domain.storage;
 
 import io.joamit.inventory.domain.category.Category;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
 public class StorageLocationCategory extends Category {
 
+    @DBRef
     private Category parent;
 
+    @DBRef
     private List<Category> children;
 
+    @DBRef
     private StorageLocation storageLocation;
 
     private String categoryPath;
 
-    @Override
     public Category getParent() {
         return parent;
     }
 
-    @Override
     public void setParent(Category parent) {
         this.parent = parent;
     }

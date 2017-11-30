@@ -1,6 +1,7 @@
 package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.category.Category;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -9,11 +10,13 @@ public class PartCategory extends Category {
     /**
      * Holds information about parent category
      */
+    @DBRef
     private Category parent;
 
     /**
      * Holds information about all related categories
      */
+    @DBRef
     private List<Category> children;
 
     /**
@@ -21,12 +24,10 @@ public class PartCategory extends Category {
      */
     private String categoryPath;
 
-    @Override
     public Category getParent() {
         return parent;
     }
 
-    @Override
     public void setParent(Category parent) {
         this.parent = parent;
     }

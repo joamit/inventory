@@ -3,6 +3,7 @@ package io.joamit.inventory.domain.project;
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.part.Part;
 import io.joamit.inventory.domain.user.User;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -10,12 +11,15 @@ public class Project extends BaseDocument {
 
     private String name;
 
+    @DBRef
     private User user;
 
+    @DBRef
     private List<Part> parts;
 
     private String description;
 
+    @DBRef
     private List<ProjectAttachment> projectAttachments;
 
     public String getName() {

@@ -1,6 +1,7 @@
 package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Unit extends BaseDocument {
 
@@ -14,6 +15,7 @@ public class Unit extends BaseDocument {
      */
     private String symbol;
 
+    @DBRef
     private SiPrefix prefixes;
 
     public String getName() {

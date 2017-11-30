@@ -2,11 +2,14 @@ package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.misc.Manufacturer;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class PartManufacturer extends BaseDocument {
 
+    @DBRef
     private Part part;
 
+    @DBRef
     private Manufacturer manufacturer;
 
     private String partNumber;

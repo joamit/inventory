@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="inventory-domain" />
-        <module name="inventory-repository" />
         <module name="inventory-service" />
       </profile>
     </annotationProcessing>

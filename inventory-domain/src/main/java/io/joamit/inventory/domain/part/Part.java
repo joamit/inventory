@@ -7,6 +7,7 @@ import io.joamit.inventory.domain.misc.MetaPartParameterCriteria;
 import io.joamit.inventory.domain.misc.StockEntry;
 import io.joamit.inventory.domain.project.ProjectPart;
 import io.joamit.inventory.domain.storage.StorageLocation;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,7 @@ public class Part extends BaseDocument {
     /**
      * Holds category information for this part
      */
+    @DBRef
     private Category category;
 
     /**
@@ -31,32 +33,38 @@ public class Part extends BaseDocument {
     /**
      * Footprint of the part
      */
+    @DBRef
     private Footprint footprint;
 
     /**
      * The unit of measurement in which part's amount will be calculated. This is required to count the part in
      * "pieces", "meters" or "grams" etc.
      */
+    @DBRef
     private PartMeasurementUnit partMeasurementUnit;
 
     /**
      * Holds storage location of this part
      */
+    @DBRef
     private StorageLocation storageLocation;
 
     /**
      * Holds information about the partManufacturers which can produce this part
      */
+    @DBRef
     private List<PartManufacturer> partManufacturers;
 
     /**
      * Holds information about the partDistributors which can distribute this part
      */
+    @DBRef
     private List<PartDistributor> partDistributors;
 
     /**
      * Holds information about part attachments
      */
+    @DBRef
     private List<PartAttachment> partAttachments;
 
     /**
@@ -82,16 +90,19 @@ public class Part extends BaseDocument {
     /**
      * Holds Stock entries for this part. This works as an audit for the part
      */
+    @DBRef
     private List<StockEntry> stockEntries;
 
     /**
      * Holds information about the parameters for this part
      */
+    @DBRef
     private List<PartParameter> partParameters;
 
     /**
      * Holds meta information about the part parameters
      */
+    @DBRef
     private List<MetaPartParameterCriteria> metaPartParameterCriterias;
 
     /**
@@ -122,6 +133,7 @@ public class Part extends BaseDocument {
     /**
      * Holds information about project parts
      */
+    @DBRef
     private List<ProjectPart> projectParts;
 
     /**

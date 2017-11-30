@@ -2,11 +2,14 @@ package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.misc.Distributor;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class PartDistributor extends BaseDocument {
 
+    @DBRef
     private Part part;
 
+    @DBRef
     private Distributor distributor;
 
     private String orderNumber;

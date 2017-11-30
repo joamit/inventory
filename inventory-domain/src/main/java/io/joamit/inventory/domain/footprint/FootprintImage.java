@@ -1,9 +1,11 @@
 package io.joamit.inventory.domain.footprint;
 
 import io.joamit.inventory.domain.BaseDocument;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class FootprintImage extends BaseDocument {
 
+    @DBRef
     private Footprint footprint;
 
     private String name;
