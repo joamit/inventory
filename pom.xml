@@ -11,6 +11,7 @@
     <description>Open source Spring Boot based inventory management webservice suite</description>
     <modules>
         <module>inventory-domain</module>
+        <module>inventory-repository</module>
     </modules>
 
     <parent>
