@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Inventory part domain model
@@ -364,6 +365,11 @@ public class Part extends BaseDocument {
         this.metaPart = metaPart;
     }
 
+    /**
+     * Create the full category path for this part
+     *
+     * @return category path with "/" separator
+     */
     public String getCategoryPath() {
         if (this.category == null) return "";
         else return this.category.generateCategoryPath("/");
@@ -383,11 +389,56 @@ public class Part extends BaseDocument {
 
         this.minStockLevel = minStockLevel;
 
-        if (this.getStock() < this.minStockLevel) {
-            this.lowStock = true;
-        } else {
-            this.lowStock = false;
-        }
+        this.lowStock = this.getStock() < this.minStockLevel;
     }
 
+    public void recomputeStockLevels() {
+        Long currentStock = 0L;
+        Double avgPrice = 0D;
+
+        Double totalPartStockPrice = 0D;
+        Integer lastPosEntryQuant = 0;
+        Double lastPosEntryPrice = 0D;
+        Long negativeStock = 0L;
+
+        for (StockEntry stockEntry : this.stockEntries) {
+            currentStock += stockEntry.getStockLevel();
+
+            if (currentStock <= 0) {
+                avgPrice = 0D;
+                totalPartStockPrice = 0D;
+                negativeStock = currentStock;
+            } else {
+                if (stockEntry.getStockLevel() > 0) {
+                    lastPosEntryQuant = stockEntry.getStockLevel();
+                    lastPosEntryPrice = stockEntry.getPrice();
+                    totalPartStockPrice += lastPosEntryPrice * (lastPosEntryQuant + negativeStock);
+                    avgPrice = totalPartStockPrice / currentStock;
+                } else {
+                    if (currentStock < lastPosEntryQuant) {
+                        totalPartStockPrice = currentStock * lastPosEntryPrice;
+                        avgPrice = totalPartStockPrice / currentStock;
+                    } else {
+                        totalPartStockPrice += stockEntry.getStockLevel() * avgPrice;
+                        avgPrice = totalPartStockPrice / currentStock;
+                    }
+                    negativeStock = 0L;
+                }
+            }
+        }
+
+
+        this.setStock(currentStock);
+        this.setAveragePrice(avgPrice);
+        this.lowStock = this.getStock() < this.minStockLevel;
+    }
+
+    /**
+     * Returns the project names this part is used in.
+     *
+     * @return array
+     */
+    public List<String> getProjectNames() {
+        return this.projectParts.stream().map(projectPart -> projectPart.getProject().getName()).distinct().collect(Collectors.toList());
+    }
 }
