@@ -3,6 +3,12 @@ package io.joamit.inventory.domain.misc;
 import io.joamit.inventory.domain.BaseDocument;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * This object represents an unit. Units can be: Volt, Hertz etc.
+ */
 public class Unit extends BaseDocument {
 
     /**
@@ -15,8 +21,23 @@ public class Unit extends BaseDocument {
      */
     private String symbol;
 
+    /**
+     * Holds reference to the SI Prefix for this part
+     */
     @DBRef
-    private SiPrefix prefixes;
+    private List<SiPrefix> prefixes;
+
+    /**
+     * Initialize a new unit instance
+     *
+     * @param name   of the new unit
+     * @param symbol of the new unit
+     */
+    public Unit(String name, String symbol) {
+        this.name = name;
+        this.symbol = symbol;
+        this.prefixes = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -34,11 +55,11 @@ public class Unit extends BaseDocument {
         this.symbol = symbol;
     }
 
-    public SiPrefix getPrefixes() {
+    public List<SiPrefix> getPrefixes() {
         return prefixes;
     }
 
-    public void setPrefixes(SiPrefix prefixes) {
+    public void setPrefixes(List<SiPrefix> prefixes) {
         this.prefixes = prefixes;
     }
 }
