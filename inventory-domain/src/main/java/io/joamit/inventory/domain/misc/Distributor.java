@@ -2,23 +2,52 @@ package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
 
+/**
+ * Inventory part distributor domain model
+ */
 public class Distributor extends BaseDocument {
 
+    /**
+     * Holds information about the Name of the distributor
+     */
     private String name;
 
+    /**
+     * Holds information about the address of the distributor
+     * TODO: move it to a separate Address object
+     */
     private String address;
 
+    /**
+     * Holds information about the website url of the distributor (optional)
+     */
     private String url;
 
+    /**
+     * Holds information about the phone number of the distributor
+     */
     private String phone;
 
+    /**
+     * Holds information about the fax details of the distributor
+     */
     private String fax;
 
+    /**
+     * Holds information about the email of the distributor
+     */
     private String email;
 
+    /**
+     * Holds information about the SKU Url of the distributor
+     */
     private String stockKeepingUnitUrl;
 
+    /**
+     * can this distributor can be included in the reports??
+     */
     private Boolean enabledForReports = true;
+
 
     public String getName() {
         return name;
