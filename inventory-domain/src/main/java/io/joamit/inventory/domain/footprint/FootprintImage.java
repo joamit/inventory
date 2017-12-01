@@ -35,6 +35,9 @@ public class FootprintImage extends BaseDocument {
         this.comments = comments;
     }
 
+    public FootprintImage() {
+    }
+
     public String getName() {
         return name;
     }

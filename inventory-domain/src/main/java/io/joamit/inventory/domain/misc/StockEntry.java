@@ -64,6 +64,9 @@ public class StockEntry extends BaseDocument {
         this.comment = comment;
     }
 
+    public StockEntry() {
+    }
+
     public Integer getStockLevel() {
         return stockLevel;
     }
@@ -126,8 +129,7 @@ public class StockEntry extends BaseDocument {
      * @return true/false
      */
     public boolean isRemoval() {
-        if (this.stockLevel < 0) return true;
-        else return false;
+        return this.stockLevel < 0;
     }
 }
 

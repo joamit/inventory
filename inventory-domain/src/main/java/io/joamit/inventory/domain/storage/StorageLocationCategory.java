@@ -14,18 +14,16 @@ public class StorageLocationCategory extends Category {
      * parent storage location if any
      */
     @DBRef
-    private Category parent;
+    private StorageLocationCategory parent;
 
     /**
      * References to any children locations if any
      */
-    @DBRef
-    private List<Category> children;
+    private List<StorageLocationCategory> children;
 
     /**
      * Reference to the storage location for this category
      */
-    @DBRef
     private List<StorageLocation> storageLocations;
 
     /**
@@ -33,19 +31,19 @@ public class StorageLocationCategory extends Category {
      */
     private String categoryPath;
 
-    public Category getParent() {
+    public StorageLocationCategory getParent() {
         return parent;
     }
 
-    public void setParent(Category parent) {
+    public void setParent(StorageLocationCategory parent) {
         this.parent = parent;
     }
 
-    public List<Category> getChildren() {
+    public List<StorageLocationCategory> getChildren() {
         return children;
     }
 
-    public void setChildren(List<Category> children) {
+    public void setChildren(List<StorageLocationCategory> children) {
         this.children = children;
     }
 

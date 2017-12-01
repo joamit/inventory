@@ -55,6 +55,9 @@ public class Project extends BaseDocument {
         this.projectAttachments = new ArrayList<>();
     }
 
+    public Project() {
+    }
+
     public String getName() {
         return name;
     }

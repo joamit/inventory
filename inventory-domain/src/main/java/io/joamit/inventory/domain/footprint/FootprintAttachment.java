@@ -33,6 +33,9 @@ public class FootprintAttachment extends BaseDocument {
         this.details = details;
     }
 
+    public FootprintAttachment() {
+    }
+
     public String getName() {
         return name;
     }

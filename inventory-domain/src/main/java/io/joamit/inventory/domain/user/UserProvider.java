@@ -17,6 +17,9 @@ public class UserProvider extends BaseDocument {
      */
     private Boolean editable;
 
+    public UserProvider() {
+    }
+
     public UserProvider(String type, Boolean editable) {
         this.type = type;
         this.editable = editable;

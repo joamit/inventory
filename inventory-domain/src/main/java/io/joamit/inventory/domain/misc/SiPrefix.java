@@ -43,6 +43,9 @@ public class SiPrefix extends BaseDocument {
         this.base = base;
     }
 
+    public SiPrefix() {
+    }
+
     public String getPrefix() {
         return prefix;
     }

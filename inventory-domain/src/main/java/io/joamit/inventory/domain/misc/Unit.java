@@ -39,6 +39,9 @@ public class Unit extends BaseDocument {
         this.prefixes = new ArrayList<>();
     }
 
+    public Unit() {
+    }
+
     public String getName() {
         return name;
     }
