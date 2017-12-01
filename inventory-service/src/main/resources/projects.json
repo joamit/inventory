@@ -1,0 +1,48 @@
+[
+  {
+    "name": "inventory",
+    "user": {
+      "username": "joamit",
+      "password": "password",
+      "email": "amit.joshi@gs.com",
+      "admin": true,
+      "legacy": false,
+      "lastSeen": "2017-11-30 09:42:00.000",
+      "active": true,
+      "protectedUser": false,
+      "userProvider": {
+        "type": "internal",
+        "editable": true
+      }
+    },
+    "projectParts": [
+      {
+        "quantity": 2,
+        "remarks": "Inventory Project part 1",
+        "overageType": "PERCENTAGE",
+        "overage": 10,
+        "lotNumber": "BSDF-123S-SD78",
+        "totalQuantity": 1000
+      },
+      {
+        "quantity": 12,
+        "remarks": "Inventory Project part 2",
+        "overageType": "ABSOLUTE",
+        "overage": 11,
+        "lotNumber": "BSLX-72S9-SD78",
+        "totalQuantity": 1000
+      }
+    ],
+    "description": "Test Inventory Project",
+    "projectAttachments": [
+      {
+        "name": "Inventory Project Attachment 1",
+        "details": "inventory-attachment-1.png"
+      },
+      {
+        "name": "Inventory Project Attachment 2",
+        "details": "inventory-attachment-2.png"
+      }
+    ]
+  }
+]

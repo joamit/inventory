@@ -1,7 +1,6 @@
 package io.joamit.inventory.domain.project;
 
 import io.joamit.inventory.domain.BaseDocument;
-import io.joamit.inventory.domain.part.Part;
 import io.joamit.inventory.domain.user.User;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
@@ -28,7 +27,7 @@ public class Project extends BaseDocument {
      * Parts that this project needs or has reference to
      */
     @DBRef
-    private List<Part> parts;
+    private List<ProjectPart> projectParts;
 
     /**
      * Project description
@@ -52,7 +51,7 @@ public class Project extends BaseDocument {
         this.name = name;
         this.user = user;
         this.description = description;
-        this.parts = new ArrayList<>();
+        this.projectParts = new ArrayList<>();
         this.projectAttachments = new ArrayList<>();
     }
 
@@ -72,13 +71,6 @@ public class Project extends BaseDocument {
         this.user = user;
     }
 
-    public List<Part> getParts() {
-        return parts;
-    }
-
-    public void setParts(List<Part> parts) {
-        this.parts = parts;
-    }
 
     public String getDescription() {
         return description;
@@ -86,6 +78,14 @@ public class Project extends BaseDocument {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<ProjectPart> getProjectParts() {
+        return projectParts;
+    }
+
+    public void setProjectParts(List<ProjectPart> projectParts) {
+        this.projectParts = projectParts;
     }
 
     public List<ProjectAttachment> getProjectAttachments() {

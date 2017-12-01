@@ -26,7 +26,7 @@ public class StorageLocationCategory extends Category {
      * Reference to the storage location for this category
      */
     @DBRef
-    private List<StorageLocation> storageLocation;
+    private List<StorageLocation> storageLocations;
 
     /**
      * Storage location category path
@@ -49,12 +49,12 @@ public class StorageLocationCategory extends Category {
         this.children = children;
     }
 
-    public List<StorageLocation> getStorageLocation() {
-        return storageLocation;
+    public List<StorageLocation> getStorageLocations() {
+        return storageLocations;
     }
 
-    public void setStorageLocation(List<StorageLocation> storageLocation) {
-        this.storageLocation = storageLocation;
+    public void setStorageLocations(List<StorageLocation> storageLocations) {
+        this.storageLocations = storageLocations;
     }
 
     public String getCategoryPath() {

@@ -10,7 +10,21 @@
     "protectedUser": false,
     "userProvider": {
       "type": "internal",
-      "editable": false
+      "editable": true
+    }
+  },
+  {
+    "username": "kuksak",
+    "password": "password",
+    "email": "sakshi.kukreti@infosys.com",
+    "admin": true,
+    "legacy": false,
+    "lastSeen": "2017-11-30 09:42:00.000",
+    "active": true,
+    "protectedUser": false,
+    "userProvider": {
+      "type": "internal",
+      "editable": true
     }
   }
 ]

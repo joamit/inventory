@@ -1,0 +1,31 @@
+[
+  {
+    "name": "mysore",
+    "storageLocationImage": {
+      "name": "mysore-image.png"
+    },
+    "storageLocationCategory": {
+      "parent": {},
+      "children": [],
+      "name": "bridgewater",
+      "description": "baremetal"
+    }
+  },
+  {
+    "name": "warsaw",
+    "storageLocationImage": {
+      "name": "warsaw-image.png"
+    },
+    "storageLocationCategory": {
+      "parent": {
+        "parent": {},
+        "children": [],
+        "name": "bridgewater",
+        "description": "baremetal"
+      },
+      "children": [],
+      "name": "kabylake",
+      "description": "dc-node"
+    }
+  }
+]
