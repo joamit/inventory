@@ -2,20 +2,44 @@ package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
 
+/**
+ * Part Manufacturer details
+ */
 public class Manufacturer extends BaseDocument {
 
+    /**
+     * Holds information about the Name of the manufacturer
+     */
     private String name;
 
+    /**
+     * Holds information about the address of the manufacturer
+     */
     private String address;
 
+    /**
+     * Holds information about the website url of the manufacturer
+     */
     private String url;
 
+    /**
+     * Holds information about the email of the manufacturer
+     */
     private String email;
 
+    /**
+     * Holds information about any miscellaneous details of the manufacturer
+     */
     private String comment;
 
+    /**
+     * Holds information about the phone details of the manufacturer
+     */
     private String phone;
 
+    /**
+     * Holds information about the fax deails of the manufacturer
+     */
     private String fax;
 
     public String getName() {
