@@ -2,31 +2,63 @@ package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.part.Part;
+import io.joamit.inventory.domain.part.ValueType;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.Arrays;
+
+/**
+ * Inventory part parameter criteria's
+ */
 public class MetaPartParameterCriteria extends BaseDocument {
 
+    /**
+     * Reference part which holds this criteria
+     */
     @DBRef
     private Part part;
 
+    /**
+     * Part's parameter name
+     */
     private String partParameterName;
 
+    /**
+     * part's operator value
+     */
     private String operator;
 
+    /**
+     * value of this parameter
+     */
     private Double value;
 
+    /**
+     * Normalized value of this parameter
+     */
     private Double normalizedValue;
 
+    /**
+     * Reference to this part parameter's SI Prefix
+     */
     @DBRef
     private SiPrefix siPrefix;
 
+    /**
+     * Value of this part parameter as a string
+     */
     private String valueStr;
 
-    private String valueType;
+    /**
+     * Type of part parameter value (keeping it generic)
+     */
+    private ValueType valueType;
 
+    /**
+     * Reference to the part parameter's unit
+     */
     @DBRef
     private Unit unit;
-
 
     public Part getPart() {
         return part;
@@ -84,11 +116,17 @@ public class MetaPartParameterCriteria extends BaseDocument {
         this.valueStr = valueStr;
     }
 
-    public String getValueType() {
-        return valueType;
+    /**
+     * Determine what value type is this part parameter (String or numeric)
+     *
+     * @return value type of this part parameter
+     */
+    public ValueType getValueType() {
+        if (Arrays.asList(ValueType.values()).contains(this.valueType)) return this.valueType;
+        else return ValueType.NUMERIC;
     }
 
-    public void setValueType(String valueType) {
+    public void setValueType(ValueType valueType) {
         this.valueType = valueType;
     }
 
@@ -98,5 +136,19 @@ public class MetaPartParameterCriteria extends BaseDocument {
 
     public void setUnit(Unit unit) {
         this.unit = unit;
+    }
+
+    /**
+     * Recalculate normalized value of this part's parameter depending on its SiPrefix
+     *
+     * @return adjusted normalized value of part parameter
+     */
+    public Double recalculateNormalizedValue() {
+        if (this.siPrefix == null) {
+            this.normalizedValue = this.value;
+        } else {
+            this.normalizedValue = this.siPrefix.calculateProduct(this.value);
+        }
+        return this.normalizedValue;
     }
 }

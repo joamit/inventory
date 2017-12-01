@@ -44,7 +44,7 @@ public class SiPrefix extends BaseDocument {
         this.base = base;
     }
 
-    private Double calculateProduct(Double value) {
+    public Double calculateProduct(Double value) {
         return value * Math.pow(this.base, this.exponent);
     }
 }
