@@ -38,7 +38,7 @@ public class Manufacturer extends BaseDocument {
     private String phone;
 
     /**
-     * Holds information about the fax deails of the manufacturer
+     * Holds information about the fax details of the manufacturer
      */
     private String fax;
 
