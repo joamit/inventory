@@ -5,10 +5,30 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class FootprintAttachment extends BaseDocument {
 
+    /**
+     * Footprint parent object of which this object is an attachment
+     * this object can later be extended to hold information about the save attachment blob
+     */
     @DBRef
     private Footprint footprint;
 
+    /**
+     * Attachment name
+     */
     private String name;
+
+    private String details;
+
+    /**
+     * Initialize a footprint attachment object
+     *
+     * @param name    of the footprint attachment
+     * @param details of the footprint attachment
+     */
+    public FootprintAttachment(String name, String details) {
+        this.name = name;
+        this.details = details;
+    }
 
     public String getName() {
         return name;
@@ -24,5 +44,13 @@ public class FootprintAttachment extends BaseDocument {
 
     public void setFootprint(Footprint footprint) {
         this.footprint = footprint;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }
