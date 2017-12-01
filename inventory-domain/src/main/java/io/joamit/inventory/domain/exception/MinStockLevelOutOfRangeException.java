@@ -1,4 +1,4 @@
 package io.joamit.inventory.domain.exception;
 
-public class MinStockLevelOutOfRangeException extends Exception {
+public class MinStockLevelOutOfRangeException extends RuntimeException {
 }
