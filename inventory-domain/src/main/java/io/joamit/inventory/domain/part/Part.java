@@ -2,6 +2,7 @@ package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.category.Category;
+import io.joamit.inventory.domain.exception.MinStockLevelOutOfRangeException;
 import io.joamit.inventory.domain.footprint.Footprint;
 import io.joamit.inventory.domain.misc.MetaPartParameterCriteria;
 import io.joamit.inventory.domain.misc.StockEntry;
@@ -251,10 +252,6 @@ public class Part extends BaseDocument {
         return minStockLevel;
     }
 
-    public void setMinStockLevel(Long minStockLevel) {
-        this.minStockLevel = minStockLevel;
-    }
-
     public Double getAveragePrice() {
         return averagePrice;
     }
@@ -370,6 +367,27 @@ public class Part extends BaseDocument {
     public String getCategoryPath() {
         if (this.category == null) return "";
         else return this.category.generateCategoryPath("/");
+    }
+
+    /**
+     * Set the minimum stock level for this part.
+     * Only positive values are allowed.
+     *
+     * @param minStockLevel A minimum stock level, only values >= 0 are allowed.
+     * @throws MinStockLevelOutOfRangeException If the passed stock level is not in range (<0)
+     */
+    public void setMinStockLevel(Long minStockLevel) throws MinStockLevelOutOfRangeException {
+        if (minStockLevel < 0) {
+            throw new MinStockLevelOutOfRangeException();
+        }
+
+        this.minStockLevel = minStockLevel;
+
+        if (this.getStock() < this.minStockLevel) {
+            this.lowStock = true;
+        } else {
+            this.lowStock = false;
+        }
     }
 
 }
