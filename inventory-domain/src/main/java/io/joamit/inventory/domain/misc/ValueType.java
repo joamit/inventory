@@ -1,4 +1,4 @@
-package io.joamit.inventory.domain.part;
+package io.joamit.inventory.domain.misc;
 
 public enum ValueType {
 

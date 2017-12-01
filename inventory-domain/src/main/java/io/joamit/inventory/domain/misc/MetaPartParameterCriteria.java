@@ -2,7 +2,6 @@ package io.joamit.inventory.domain.misc;
 
 import io.joamit.inventory.domain.BaseDocument;
 import io.joamit.inventory.domain.part.Part;
-import io.joamit.inventory.domain.part.ValueType;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Arrays;
