@@ -12,6 +12,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Inventory part domain model
+ */
 public class Part extends BaseDocument {
 
     /**
@@ -75,12 +78,12 @@ public class Part extends BaseDocument {
     /**
      * Holds stock information for this part
      */
-    private Long stock = 0l;
+    private Long stock = 0L;
 
     /**
      * Holds minimum stock level information for the part
      */
-    private Long minStockLevel = 0l;
+    private Long minStockLevel = 0L;
 
     /**
      * Holds average price information for the part
@@ -141,10 +144,19 @@ public class Part extends BaseDocument {
      */
     private String internalPartNumber;
 
+    /**
+     * Holds information about the removal status of this part
+     */
     private Boolean removals = false;
 
+    /**
+     * If the stock is in low state
+     */
     private Boolean lowStock = false;
 
+    /**
+     * If this is a meta part
+     */
     private Boolean metaPart = false;
 
     public Category getCategory() {
