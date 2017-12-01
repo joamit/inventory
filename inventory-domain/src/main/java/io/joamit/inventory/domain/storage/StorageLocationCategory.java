@@ -5,17 +5,32 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
+/**
+ * Storage Location Category information
+ */
 public class StorageLocationCategory extends Category {
 
+    /**
+     * parent storage location if any
+     */
     @DBRef
     private Category parent;
 
+    /**
+     * References to any children locations if any
+     */
     @DBRef
     private List<Category> children;
 
+    /**
+     * Reference to the storage location for this category
+     */
     @DBRef
-    private StorageLocation storageLocation;
+    private List<StorageLocation> storageLocation;
 
+    /**
+     * Storage location category path
+     */
     private String categoryPath;
 
     public Category getParent() {
@@ -34,11 +49,11 @@ public class StorageLocationCategory extends Category {
         this.children = children;
     }
 
-    public StorageLocation getStorageLocation() {
+    public List<StorageLocation> getStorageLocation() {
         return storageLocation;
     }
 
-    public void setStorageLocation(StorageLocation storageLocation) {
+    public void setStorageLocation(List<StorageLocation> storageLocation) {
         this.storageLocation = storageLocation;
     }
 

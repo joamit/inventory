@@ -3,13 +3,26 @@ package io.joamit.inventory.domain.storage;
 import io.joamit.inventory.domain.BaseDocument;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+/**
+ * Holds information about the part's storage location, this object needs to extended further to hold
+ * inventory warehouse details
+ */
 public class StorageLocation extends BaseDocument {
 
+    /**
+     * Name of the storage location
+     */
     private String name;
 
+    /**
+     * Storage location image details
+     */
     @DBRef
     private StorageLocationImage storageLocationImage;
 
+    /**
+     * Storage location category
+     */
     @DBRef
     private StorageLocationCategory storageLocationCategory;
 
