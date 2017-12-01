@@ -5,30 +5,69 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Date;
 
+/**
+ * Holds information about a user of the system
+ */
 public class User extends BaseDocument {
 
+    /**
+     * Holds information about username
+     */
     private String username;
 
+    /**
+     * Holds information about user's password
+     */
     private String password;
 
+    /**
+     * Holds information about user's new password, might come in handy when resetting or adding new password
+     */
     private String newPassword;
 
+    /**
+     * Holds information about user's email address
+     */
     private String email;
 
+    /**
+     * Holds information about user's admin status
+     */
     private Boolean admin;
 
+    /**
+     * Holds information about user's legacy status, might come in handy if we want to move to a new auth system
+     * in some later point of time
+     */
     private Boolean legacy;
 
+    /**
+     * Holds information about when user was last seen logged onto the system
+     */
     private Date lastSeen;
 
+    /**
+     * Holds information about user's preferences, we can store serialized preferences which can later be
+     * used to initialize certain properties
+     */
     private String initialUserPreferences;
 
+    /**
+     * Holds information about user detail provider
+     */
     @DBRef
     private UserProvider userProvider;
 
+    /**
+     * Holds information about user's active status
+     */
     private Boolean active;
 
+    /**
+     * Holds information about user's protected status
+     */
     private boolean protectedUser;
+
 
     public String getUsername() {
         return username;
