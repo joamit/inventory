@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Footprint of the Inventory part
+ */
 public class Footprint extends BaseDocument {
 
     /**

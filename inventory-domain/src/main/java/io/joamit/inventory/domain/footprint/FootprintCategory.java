@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Inventory part footprint category details
+ */
 public class FootprintCategory extends Category {
 
     /**

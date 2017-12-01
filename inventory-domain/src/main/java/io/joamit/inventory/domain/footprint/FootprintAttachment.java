@@ -3,6 +3,9 @@ package io.joamit.inventory.domain.footprint;
 import io.joamit.inventory.domain.BaseDocument;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+/**
+ * Attachment of the inventory part footprint
+ */
 public class FootprintAttachment extends BaseDocument {
 
     /**
