@@ -12,25 +12,35 @@ class ManageUnitsPage extends React.Component {
         unit.selectedPrefix = '';
 
         const siPrefixes = [];
-        siPrefixes.push({prefix: 'milli', symbol: 'm', exponent: -3, base: 10});
-        siPrefixes.push({prefix: 'kilo', symbol: 'K', exponent: 3, base: 10});
+        siPrefixes.push({id: 'test1', prefix: 'milli', symbol: 'm', exponent: -3, base: 10});
+        siPrefixes.push({id: 'test2', prefix: 'kilo', symbol: 'K', exponent: 3, base: 10});
+
+        //use ids as the values for finding actual object later
+        const siPrefixesOptions = [];
+        siPrefixesOptions.push({value: 'test1', text: 'milli'});
+        siPrefixesOptions.push({value: 'test2', text: 'kilo'});
 
         this.state = {
             unit: unit,
             siPrefixes: siPrefixes,
+            siPrefixesOptions: siPrefixesOptions,
             errors: {},
-            saving: false
+            saving: false,
+            showModal: false
         };
         this.onSave = this.onSave.bind(this);
         this.onChange = this.onChange.bind(this);
         this.addSiPrefix = this.addSiPrefix.bind(this);
+        this.onModalClose = this.onModalClose.bind(this);
+        this.onModalOpen = this.onModalOpen.bind(this);
     }
 
-    onSave() {
-        this.state.saving = true;
+    onSave(event) {
+        event.preventDefault();
+        this.setState({saving: true});
         delete this.state.unit.selectedPrefix;
         console.log('Saving unit object', this.state.unit);
-        this.state.saving = false;
+        this.setState({saving: false});
         //TODO: shall we perform a redirect here???
     }
 
@@ -41,9 +51,21 @@ class ManageUnitsPage extends React.Component {
         return this.setState({unit: unit});
     }
 
-    addSiPrefix() {
+    addSiPrefix(event) {
+        event.preventDefault();
         //TODO: how to avoid inserting duplicates here...
-        this.state.unit.siPrefixes.push(this.state.unit.selectedPrefix);
+        const siPrefix = this.state.siPrefixes.find(siPrefix => siPrefix.id === this.state.unit.selectedPrefix);
+        this.state.unit.siPrefixes.push(siPrefix);
+        this.onModalClose();
+    }
+
+    onModalClose() {
+        this.setState({showModal: false});
+    }
+
+    onModalOpen(event) {
+        event.preventDefault();
+        this.setState({showModal: true});
     }
 
     render() {
@@ -51,12 +73,15 @@ class ManageUnitsPage extends React.Component {
             <ManageUnitsForm
                 formTitle="Add a new Unit"
                 unit={this.state.unit}
-                siPrefixes={this.state.siPrefixes}
+                siPrefixes={this.state.siPrefixesOptions}
                 onSave={this.onSave}
                 onChange={this.onChange}
                 addSiPrefix={this.addSiPrefix}
                 isLoading={this.state.saving}
-                errors={this.state.errors}/>
+                showModal={this.state.showModal}
+                errors={this.state.errors}
+                onModalClose={this.state.onModalClose}
+                onModalOpen={this.state.onModalOpen}/>
         );
     }
 }
