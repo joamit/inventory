@@ -12,6 +12,7 @@
     <modules>
         <module>inventory-domain</module>
         <module>inventory-service</module>
+        <module>inventory-site</module>
     </modules>
 
     <parent>
