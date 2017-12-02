@@ -24,7 +24,7 @@ TextInput.propTypes = {
     label: React.PropTypes.string.isRequired,
     onChange: React.PropTypes.func.isRequired,
     placeholder: React.PropTypes.string,
-    value: React.PropTypes.string,
+    value: React.PropTypes.string.isRequired,
     error: React.PropTypes.string
 };
 

@@ -27,9 +27,9 @@ SelectInput.propTypes = {
     label: React.PropTypes.string.isRequired,
     onChange: React.PropTypes.func.isRequired,
     defaultOption: React.PropTypes.string,
-    value: React.PropTypes.string,
+    value: React.PropTypes.string.isRequired,
     error: React.PropTypes.string,
-    options: React.PropTypes.arrayOf(PropTypes.object)
+    options: React.PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default SelectInput;

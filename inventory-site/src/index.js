@@ -8,10 +8,7 @@ import {browserHistory, Router} from 'react-router';
 import routes from './components/routes';
 
 import '../styles/styles.css';
-import '../styles/app.less';
-import '../styles/theme.less';
 import '../node_modules/toastr/build/toastr.min.css';
-import '../node_modules/react-ui-tree/dist/react-ui-tree.css';
 
 const store = configureStore();
 
