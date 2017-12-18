@@ -1,28 +1,10 @@
 import React from 'react';
 import TextInput from "../common/text.input";
-import SelectInput from "../common/select.input";
-import Modal from 'react-overlays/lib/Modal';
-
-let rand = () => (Math.floor(Math.random() * 20) - 10);
-
-const modalStyle = {
-    position: 'fixed',
-    zIndex: 1040,
-    top: 0, bottom: 0, left: 0, right: 0
-};
-
-const backdropStyle = {
-    position: 'fixed',
-    top: 0, bottom: 0, left: 0, right: 0,
-    zIndex: 'auto',
-    backgroundColor: '#000',
-    opacity: 0.5
-};
+import Modal from "../common/modal";
 
 const ManageUnitsForm = ({
                              formTitle, unit, siPrefixes, onSave, addSiPrefix,
-                             onChange, isLoading, errors, showModal,
-                             onModalClose, onModalOpen
+                             onChange, isLoading, errors, onModalOpen, onModalClose, showModal
                          }) => {
     return (
         <form>
@@ -38,25 +20,17 @@ const ManageUnitsForm = ({
             </div>
             <div className="row">
                 <div className="col-md-12">
-                    <input onClick={onModalOpen} className="btn btn-primary" type="button" value="Add Si Prefix"/>
+                    <button className="btn btn-default" onClick={onModalOpen}>Open Modal</button>
                 </div>
             </div>
-            <Modal
-                aria-labelledby="modal-label"
-                style={modalStyle}
-                backdropStyle={backdropStyle}
-                show={showModal}
-                onHide={onModalClose}
-            >
-                <div className="row">
-                    <div className="col-md-8">
-                        <SelectInput name="selectedPrefix" label="Available SI Prefixes" onChange={onChange}
-                                     options={siPrefixes} error={errors.siPrefixes} value={unit.selectedPrefix}/>
-                    </div>
-                    <div className="col-md-2 text-right">
-                        <input onClick={addSiPrefix} className="btn btn-primary" type="button" value="Add Si Prefix"/>
-                    </div>
-                </div>
+
+            <button onClick={onModalOpen}>Open modal</button>
+            <Modal isOpen={showModal} onClose={onModalClose}>
+                <h1>Modal title</h1>
+                <p>hello</p>
+                <p>
+                    <button onClick={onModalClose}>Close</button>
+                </p>
             </Modal>
 
             <input
@@ -79,9 +53,9 @@ ManageUnitsForm.propTypes = {
     onChange: React.PropTypes.func.isRequired,
     isLoading: React.PropTypes.bool.isRequired,
     errors: React.PropTypes.object.isRequired,
-    showModal: React.PropTypes.bool.isRequired,
+    onModalOpen: React.PropTypes.func,
     onModalClose: React.PropTypes.func,
-    onModalOpen: React.PropTypes.func
+    showModal: React.PropTypes.bool
 };
 
 export default ManageUnitsForm;

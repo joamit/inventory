@@ -59,7 +59,8 @@ class ManageUnitsPage extends React.Component {
         this.onModalClose();
     }
 
-    onModalClose() {
+    onModalClose(event) {
+        event.preventDefault();
         this.setState({showModal: false});
     }
 
@@ -70,18 +71,20 @@ class ManageUnitsPage extends React.Component {
 
     render() {
         return (
-            <ManageUnitsForm
-                formTitle="Add a new Unit"
-                unit={this.state.unit}
-                siPrefixes={this.state.siPrefixesOptions}
-                onSave={this.onSave}
-                onChange={this.onChange}
-                addSiPrefix={this.addSiPrefix}
-                isLoading={this.state.saving}
-                showModal={this.state.showModal}
-                errors={this.state.errors}
-                onModalClose={this.state.onModalClose}
-                onModalOpen={this.state.onModalOpen}/>
+            <div>
+                <ManageUnitsForm
+                    formTitle="Add a new Unit"
+                    unit={this.state.unit}
+                    siPrefixes={this.state.siPrefixesOptions}
+                    onSave={this.onSave}
+                    onChange={this.onChange}
+                    addSiPrefix={this.addSiPrefix}
+                    isLoading={this.state.saving}
+                    errors={this.state.errors}
+                    onModalOpen={this.onModalOpen}
+                    onModalClose={this.onModalClose}
+                    showModal={this.state.showModal}/>
+            </div>
         );
     }
 }
