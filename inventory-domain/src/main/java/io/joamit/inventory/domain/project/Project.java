@@ -26,7 +26,6 @@ public class Project extends BaseDocument {
     /**
      * Parts that this project needs or has reference to
      */
-    @DBRef
     private List<ProjectPart> projectParts;
 
     /**
@@ -37,7 +36,6 @@ public class Project extends BaseDocument {
     /**
      * Project attachments
      */
-    @DBRef
     private List<ProjectAttachment> projectAttachments;
 
     /**

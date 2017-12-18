@@ -16,7 +16,6 @@ public class PartCategory extends Category {
     /**
      * Holds information about all related categories
      */
-    @DBRef
     private List<Category> children;
 
     /**

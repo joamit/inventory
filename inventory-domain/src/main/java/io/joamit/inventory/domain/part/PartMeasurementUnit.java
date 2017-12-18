@@ -1,7 +1,6 @@
 package io.joamit.inventory.domain.part;
 
 import io.joamit.inventory.domain.BaseDocument;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ public class PartMeasurementUnit extends BaseDocument {
 
     private Boolean defaultUnit;
 
-    @DBRef
     private List<Part> parts;
 
     public String getName() {

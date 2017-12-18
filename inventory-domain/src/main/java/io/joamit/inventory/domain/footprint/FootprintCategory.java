@@ -20,14 +20,12 @@ public class FootprintCategory extends Category {
     /**
      * Children categories for this Footprint category (if there are any) (totally optional)
      */
-    @DBRef
     private List<Category> children;
 
     /**
      * list of footprint this category holds
      * (this is a reference to all the footprints that have this category as a footprint category)
      */
-    @DBRef
     private List<Footprint> footprints;
 
     /**

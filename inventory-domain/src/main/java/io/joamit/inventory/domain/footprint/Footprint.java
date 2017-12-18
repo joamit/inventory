@@ -36,7 +36,6 @@ public class Footprint extends BaseDocument {
     /**
      * Holds information about the part footprint attachments
      */
-    @DBRef
     private List<FootprintAttachment> footprintAttachments;
 
     public String getCategoryPath() {

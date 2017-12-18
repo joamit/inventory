@@ -57,19 +57,16 @@ public class Part extends BaseDocument {
     /**
      * Holds information about the partManufacturers which can produce this part
      */
-    @DBRef
     private List<PartManufacturer> partManufacturers;
 
     /**
      * Holds information about the partDistributors which can distribute this part
      */
-    @DBRef
     private List<PartDistributor> partDistributors;
 
     /**
      * Holds information about part attachments
      */
-    @DBRef
     private List<PartAttachment> partAttachments;
 
     /**
@@ -95,19 +92,16 @@ public class Part extends BaseDocument {
     /**
      * Holds Stock entries for this part. This works as an audit for the part
      */
-    @DBRef
     private List<StockEntry> stockEntries;
 
     /**
      * Holds information about the parameters for this part
      */
-    @DBRef
     private List<PartParameter> partParameters;
 
     /**
      * Holds meta information about the part parameters
      */
-    @DBRef
     private List<MetaPartParameterCriteria> metaPartParameterCriterias;
 
     /**
@@ -138,7 +132,6 @@ public class Part extends BaseDocument {
     /**
      * Holds information about project parts
      */
-    @DBRef
     private List<ProjectPart> projectParts;
 
     /**
