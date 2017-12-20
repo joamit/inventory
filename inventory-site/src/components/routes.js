@@ -12,7 +12,7 @@ export default (
         <IndexRoute component={HomePage}/>
         <Route path="about" component={AboutPage}/>
         <Route path="inventory" component={InventoryPage}/>
-            <Route path="manageUnits" component={ManageUnitsPage}/>
-            <Route path="*" component={ErrorPage}/>
+        <Route path="manageUnits" component={ManageUnitsPage}/>
+        <Route path="*" component={ErrorPage}/>
     </Route>
 );

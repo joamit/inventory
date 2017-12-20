@@ -8,7 +8,6 @@ import {browserHistory, Router} from 'react-router';
 import routes from './components/routes';
 
 import '../styles/styles.css';
-import '../node_modules/toastr/build/toastr.min.css';
 
 const store = configureStore();
 

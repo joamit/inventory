@@ -6,7 +6,7 @@ import BubblePreLoader from 'react-bubble-preloader';
 class App extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
+            <div id="wrapper">
                 <Header/>
                 {this.props.children}
                 {this.props.loading && <div className="text-center"><BubblePreLoader animation={{speed: 1}}/></div>}
