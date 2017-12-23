@@ -2,7 +2,7 @@ import React from 'react';
 import TextInput from "../common/text.input";
 import Modal from "../common/modal";
 
-const ManageUnitsForm = ({
+const AddUnitForm = ({
                              formTitle, unit, siPrefixes, onSave, addSiPrefix,
                              onChange, isLoading, errors, onModalOpen, onModalClose, showModal
                          }) => {
@@ -44,7 +44,7 @@ const ManageUnitsForm = ({
     );
 };
 
-ManageUnitsForm.propTypes = {
+AddUnitForm.propTypes = {
     formTitle: React.PropTypes.string,
     unit: React.PropTypes.object.isRequired,
     siPrefixes: React.PropTypes.array.isRequired,
@@ -58,4 +58,4 @@ ManageUnitsForm.propTypes = {
     showModal: React.PropTypes.bool
 };
 
-export default ManageUnitsForm;
+export default AddUnitForm;

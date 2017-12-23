@@ -2,7 +2,7 @@ import React from 'react';
 
 const UnitsListRow = () => {
     return (
-        <h1>UnitsListRow</h1>
+        <h1>Unit List Row</h1>
     );
 };
 

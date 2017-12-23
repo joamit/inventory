@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ManageUnitsForm from "./manage.units.form";
+import AddUnitForm from "./add.unit.form";
 
-class ManageUnitsPage extends React.Component {
+class AddUnitPage extends React.Component {
     constructor(props, context) {
         super(props, context);
         const unit = {};
@@ -71,8 +71,8 @@ class ManageUnitsPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <ManageUnitsForm
+            <div id="page-wrapper">
+                <AddUnitForm
                     formTitle="Add a new Unit"
                     unit={this.state.unit}
                     siPrefixes={this.state.siPrefixesOptions}
@@ -89,10 +89,10 @@ class ManageUnitsPage extends React.Component {
     }
 }
 
-ManageUnitsPage.propTypes = {};
+AddUnitPage.propTypes = {};
 
 function mapStateToProps(state) {
     return state;
 }
 
-export default connect(mapStateToProps)(ManageUnitsPage);
+export default connect(mapStateToProps)(AddUnitPage);

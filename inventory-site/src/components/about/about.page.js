@@ -3,7 +3,7 @@ import React from 'react';
 class AboutPage extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
+            <div id="page-wrapper">
                 <div className="panel panel-default">
                     <div className="panel-heading">
                         <h5 className="panel-title">About the application</h5>

@@ -4,7 +4,7 @@ import App from './app';
 import HomePage from './home/home.page';
 import AboutPage from './about/about.page';
 import InventoryPage from "./inventory/inventory.page";
-import ManageUnitsPage from "./units/manage.units.page";
+import AddUnitPage from "./units/add.unit.page";
 import ErrorPage from "./common/error.page";
 
 export default (
@@ -12,7 +12,9 @@ export default (
         <IndexRoute component={HomePage}/>
         <Route path="about" component={AboutPage}/>
         <Route path="inventory" component={InventoryPage}/>
-        <Route path="manageUnits" component={ManageUnitsPage}/>
+        <Route path="add">
+            <Route path="unit" component={AddUnitPage}/>
+        </Route>
         <Route path="*" component={ErrorPage}/>
     </Route>
 );

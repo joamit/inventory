@@ -24,5 +24,6 @@ export default {
     storageLocationImages: [],
     storageLocations: [],
     userProviders: [],
-    ajaxCallsInProgress: 0
+    ajaxCallsInProgress: 0,
+    showSidebar: true
 };

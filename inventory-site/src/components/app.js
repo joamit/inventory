@@ -7,7 +7,7 @@ class App extends React.Component {
     render() {
         return (
             <div id="wrapper">
-                <Header/>
+                <Header showSidebar={this.props.showSidebar}/>
                 {this.props.children}
                 {this.props.loading && <div className="text-center"><BubblePreLoader animation={{speed: 1}}/></div>}
             </div>
@@ -22,7 +22,8 @@ App.propTypes = {
 
 function mapStateToProps(state, ownProps) {
     return {
-        loading: state.ajaxCallsInProgress > 0
+        loading: state.updatedState.ajaxCallsInProgress > 0,
+        showSidebar: state.updatedState.showSidebar
     };
 }
 

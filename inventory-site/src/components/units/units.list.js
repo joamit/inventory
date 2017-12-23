@@ -2,7 +2,7 @@ import React from 'react';
 
 const UnitsList = () => {
     return (
-        <h1>UnitsList test</h1>
+        <h1>Unit List test</h1>
     );
 };
 
