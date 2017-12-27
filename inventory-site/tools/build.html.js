@@ -9,12 +9,12 @@ fs.readFile('src/index.html', 'utf8', (err, markup) => {
         return console.log(colors.bold.red(err));
     }
 
-    const $ = cheerio.load(markup);
+    const $ = cheerio.load(markup, {xmlMode: true});
 
-    fs.writeFile('../inventory-service/src/main/resources/static/index.html', $.html(), 'utf8', function (err) {
+    fs.writeFile('../inventory-service/src/main/resources/templates/index.html', $.html(), 'utf8', function (err) {
         if (err) {
             return console.log(colors.bold.red(err));
         }
-        console.log(colors.bold.green('index.html was successfully written to ../inventory-service/src/main/resources/static'));
+        console.log(colors.bold.green('index.html was successfully written to ../inventory-service/src/main/resources/templates'));
     });
 });

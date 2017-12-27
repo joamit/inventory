@@ -25,7 +25,7 @@ webpack(webpackConfig).run((err, stats) => {
 
     console.log(`Webpack stats: ${stats}`);
 
-    console.log('The website has been compiled in production mode and written to ../inventory-service/src/main/resources/static. It\'s ready to be served!!!!!'.bold.green);
+    console.log('The website has been compiled in production mode and written to ../inventory-service/src/main/resources/static/js. It\'s ready to be served!!!!!'.bold.green);
 
     return 0;
 });

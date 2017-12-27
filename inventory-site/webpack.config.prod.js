@@ -14,7 +14,7 @@ export default {
     entry: path.resolve(__dirname, 'src/index.js'),
     target: 'web',
     output: {
-        path: '../inventory-service/src/main/resources/static', // Note: Physical files are only output by the production build task `npm run build`.
+        path: '../inventory-service/src/main/resources/static/js', // Note: Physical files are only output by the production build task `npm run build`.
         publicPath: '/',
         filename: 'bundle.js'
     },
@@ -25,7 +25,7 @@ export default {
         errorDetails: true
     },
     devServer: {
-        contentBase: '../inventory-service/src/main/resources/static'
+        contentBase: '../inventory-service/src/main/resources/static/js'
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
