@@ -5,7 +5,6 @@ import HomePage from './home/home.page';
 import AboutPage from './about/about.page';
 import InventoryPage from "./inventory/inventory.page";
 import AddUnitPage from "./units/add.unit.page";
-import ErrorPage from "./common/error.page";
 
 export default (
     <Route path="/" component={App}>
@@ -15,6 +14,6 @@ export default (
         <Route path="add">
             <Route path="unit" component={AddUnitPage}/>
         </Route>
-        <Route path="*" component={ErrorPage}/>
+        <Route path="*" component={HomePage}/>
     </Route>
 );
