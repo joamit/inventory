@@ -14,15 +14,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login", "/register", "/vendor/***").permitAll()
-                .antMatchers("/").hasRole("OPERATIONS")
-                .and()
+                    .antMatchers("/login", "/register", "/vendor/***").permitAll()
+                    .antMatchers("/").hasRole("OPERATIONS")
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/login")
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .successForwardUrl("/");
+                    .loginPage("/login")
+                    .loginProcessingUrl("/login")
+                    .usernameParameter("username")
+                    .passwordParameter("password")
+                    .successForwardUrl("/");
     }
 
     @Override
