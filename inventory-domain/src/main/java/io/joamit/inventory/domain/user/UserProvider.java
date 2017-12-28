@@ -10,7 +10,7 @@ public class UserProvider extends BaseDocument {
     /**
      * Type of user i.e. internal/external/manufacturer/distributor
      */
-    private String type;
+    private UserType type;
 
     /**
      * If user information is editable or not
@@ -20,16 +20,11 @@ public class UserProvider extends BaseDocument {
     public UserProvider() {
     }
 
-    public UserProvider(String type, Boolean editable) {
-        this.type = type;
-        this.editable = editable;
-    }
-
-    public String getType() {
+    public UserType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(UserType type) {
         this.type = type;
     }
 

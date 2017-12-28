@@ -46,25 +46,33 @@
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="/register" method="post">
+                    <form id="registrationForm" role="form" action="/register" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="username" type="email"
+                                <input class="form-control" placeholder="Username" name="username" type="username"
                                        autofocus=""/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="E-mail" name="email" type="email"
+                                       />
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password"
                                        value=""/>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Confirm Password" name="confirmPassword" type="password"
-                                       value=""/>
-                            </div>
                             <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
+                            <div class="checkbox text-right">
+                                <label><a href="/login" >Existing User?</a></label>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="error-text"></div>
         </div>
     </div>
 </div>
@@ -80,6 +88,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/vendor/dist/js/sb-admin-2.js"></script>
+
+<script src="/vendor/register.js"></script>
 
 </body>
 
