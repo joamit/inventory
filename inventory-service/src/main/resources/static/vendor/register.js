@@ -5,7 +5,17 @@ $('#registrationForm').submit(function () {
         data: $('#registrationForm').serialize(),
         success: function (response) {
             console.log('form submitted.', response);
-            window.location = "/login";
+            if (response && response.success) {
+                window.location = "/login";
+            } else {
+                var errorMsg;
+                if (response && response.message) {
+                    errorMsg = '<span style=\'color: red\'>' + response.message + '</span>';
+                } else {
+                    errorMsg = '<span style=\'color: red\'>User Registration Failed!! Please try again.</span>';
+                }
+                $(".error-text").append(errorMsg);
+            }
         },
         error: function (response) {
             console.log('form submission failed!!', response);
