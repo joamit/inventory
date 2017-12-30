@@ -252,7 +252,7 @@ const Header = (showSidebar) => {
                                         <a href="add/si-prefix">Si Prefix</a>
                                     </li>
                                     <li>
-                                        <Link to="unit">Unit</Link>
+                                        <Link to="new-unit">Unit</Link>
                                     </li>
                                 </ul>
                             </li>

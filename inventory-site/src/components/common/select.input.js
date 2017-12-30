@@ -2,18 +2,18 @@ import React, {PropTypes} from 'react';
 
 const SelectInput = ({name, label, onChange, defaultOption, value, error, options}) => {
     return (
-        <div className="form-group">
-            <label htmlFor={name}>{label}</label>
-            <div className="field">
+        <div className="form-group row">
+            <label htmlFor={name} className="col-sm-2 col-form-label">{label}</label>
+            <div className="col-sm-10">
                 <select
                     name={name}
                     value={value}
                     onChange={onChange}
                     className="form-control">
-                    <option value="">{defaultOption}</option>
+                    <option key="defaultKey" value="" selected>{defaultOption}</option>
                     {
-                        options.map((option) => {
-                            return <option key={option.value} value={option.value}>{option.text}</option>;
+                        options.map((opt) => {
+                            return <option key={opt.value} value={opt.value}>{opt.text}</option>;
                         })
                     }
                 </select>

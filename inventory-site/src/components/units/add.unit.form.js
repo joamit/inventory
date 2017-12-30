@@ -1,45 +1,55 @@
 import React from 'react';
 import TextInput from "../common/text.input";
 import Modal from "../common/modal";
+import SelectInput from "../common/select.input";
 
 const AddUnitForm = ({
                              formTitle, unit, siPrefixes, onSave, addSiPrefix,
                              onChange, isLoading, errors, onModalOpen, onModalClose, showModal
                          }) => {
     return (
-        <form>
-            <h4>{formTitle}</h4>
-            <div className="row">
-                <div className="col-md-6">
+        <div className="panel panel-default">
+            <div className="panel-heading">
+                <div className="panel-title">
+                    {formTitle}
+                </div>
+            </div>
+            <div className="panel-body">
+                <form>
                     <TextInput name="name" label="Name" onChange={onChange} value={unit.name} error={errors.name}/>
-                </div>
-                <div className="col-md-6">
-                    <TextInput name="symbol" label="Symbol" onChange={onChange} value={unit.symbol}
-                               error={errors.symbol}/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-12">
-                    <button className="btn btn-default" onClick={onModalOpen}>Open Modal</button>
-                </div>
-            </div>
 
-            <button onClick={onModalOpen}>Open modal</button>
-            <Modal isOpen={showModal} onClose={onModalClose}>
-                <h1>Modal title</h1>
-                <p>hello</p>
-                <p>
-                    <button onClick={onModalClose}>Close</button>
-                </p>
-            </Modal>
+                    <TextInput name="symbol" label="Symbol" onChange={onChange} value={unit.symbol} error={errors.symbol}/>
 
-            <input
-                type="submit"
-                disabled={isLoading}
-                value={isLoading ? 'Saving...' : 'Save'}
-                className={isLoading ? 'btn btn-success' : 'btn btn-primary'}
-                onClick={onSave}/>
-        </form>
+                    <Modal isOpen={showModal} onClose={onModalClose}>
+                        <div className="panel panel-primary">
+                            <div className="panel-heading">
+                                <div className="panel-title">
+                                    Add SI Unit
+                                </div>
+                            </div>
+                            <div className="panel-body">
+                                <SelectInput name="siPrefix" label="" onChange={addSiPrefix} value={unit.selectedPrefix} options={siPrefixes}/>
+                            </div>
+                            <div className="panel-footer text-right">
+                                <button onClick={onModalClose}>Close</button>
+                            </div>
+                        </div>
+                    </Modal>
+
+                    <div className="form-group row">
+                        <div className="col-md-12 text-right">
+                            <button className="btn btn-default" onClick={onModalOpen}>Add SI Prefix</button>
+                            <input
+                                type="submit"
+                                disabled={isLoading}
+                                value={isLoading ? 'Saving...' : 'Save'}
+                                className={isLoading ? 'btn btn-success' : 'btn btn-primary'}
+                                onClick={onSave}/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     );
 };

@@ -11,9 +11,7 @@ export default (
         <IndexRoute component={HomePage}/>
         <Route path="about" component={AboutPage}/>
         <Route path="inventory" component={InventoryPage}/>
-        <Route path="add">
-            <Route path="unit" component={AddUnitPage}/>
-        </Route>
+        <Route path="new-unit" component={AddUnitPage}/>
         <Route path="*" component={HomePage}/>
     </Route>
 );
