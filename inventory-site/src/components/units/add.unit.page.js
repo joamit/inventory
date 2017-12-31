@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import AddUnitForm from "./add.unit.form";
+import Header from "../common/header";
 
 class AddUnitPage extends React.Component {
     constructor(props, context) {
@@ -71,20 +72,24 @@ class AddUnitPage extends React.Component {
 
     render() {
         return (
-            <div id="page-wrapper">
-                <AddUnitForm
-                    formTitle="Add a new Unit"
-                    unit={this.state.unit}
-                    siPrefixes={this.state.siPrefixesOptions}
-                    onSave={this.onSave}
-                    onChange={this.onChange}
-                    addSiPrefix={this.addSiPrefix}
-                    isLoading={this.state.saving}
-                    errors={this.state.errors}
-                    onModalOpen={this.onModalOpen}
-                    onModalClose={this.onModalClose}
-                    showModal={this.state.showModal}/>
+            <div>
+                <Header showSidebar={this.props.showSidebar}/>
+                <div id="page-wrapper">
+                    <AddUnitForm
+                        formTitle="Add a new Unit"
+                        unit={this.state.unit}
+                        siPrefixes={this.state.siPrefixesOptions}
+                        onSave={this.onSave}
+                        onChange={this.onChange}
+                        addSiPrefix={this.addSiPrefix}
+                        isLoading={this.state.saving}
+                        errors={this.state.errors}
+                        onModalOpen={this.onModalOpen}
+                        onModalClose={this.onModalClose}
+                        showModal={this.state.showModal}/>
+                </div>
             </div>
+
         );
     }
 }
@@ -92,7 +97,10 @@ class AddUnitPage extends React.Component {
 AddUnitPage.propTypes = {};
 
 function mapStateToProps(state) {
-    return state;
+    return {
+        loading: state.updatedState.ajaxCallsInProgress > 0,
+        showSidebar: state.updatedState.showSidebar
+    };
 }
 
 export default connect(mapStateToProps)(AddUnitPage);
