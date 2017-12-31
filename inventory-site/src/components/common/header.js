@@ -58,7 +58,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/user/messages">
+                                <a className="text-center" href="/user-messages">
                                     <strong>Read All Messages</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -143,7 +143,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/warehouse/stats">
+                                <a className="text-center" href="/warehouse-stats">
                                     <strong>See All Warehouses</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -201,7 +201,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/user/alerts">
+                                <a className="text-center" href="/user-alerts">
                                     <strong>See All Alerts</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -213,12 +213,12 @@ const Header = (showSidebar) => {
                             <i className="fa fa-user fa-fw"/> <i className="fa fa-caret-down"/>
                         </a>
                         <ul className="dropdown-menu dropdown-user">
-                            <li><a href="/user/profile"><i className="fa fa-user fa-fw"/> My Profile</a>
+                            <li><a href="/user-profile"><i className="fa fa-user fa-fw"/> My Profile</a>
                             </li>
-                            <li><a href="/user/settings"><i className="fa fa-gear fa-fw"/> Settings</a>
+                            <li><a href="/user-settings"><i className="fa fa-gear fa-fw"/> Settings</a>
                             </li>
                             <li className="divider"/>
-                            <li><a href="/user/logout"><i className="fa fa-sign-out fa-fw"/> Logout</a>
+                            <li><a href="/user-logout"><i className="fa fa-sign-out fa-fw"/> Logout</a>
                             </li>
                         </ul>
                     </li>
@@ -237,20 +237,14 @@ const Header = (showSidebar) => {
                     <div className="sidebar-nav navbar-collapse">
                         <ul className="nav" id="side-menu">
                             <li>
-                                <a href="/"><i className="fa fa-dashboard fa-fw"/> Dashboard</a>
+                                <a href="/"><i className="fa fa-dashboard fa-fw"/> Dashboard </a>
+                            </li>
+                            <li>
+                                <Link to="inventory"><i className="fa fa-dashboard fa-fw"/> Inventory </Link>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Add<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="add/distributor">Distributor</a>
-                                    </li>
-                                    <li>
-                                        <a href="add/manufacturer">Manufacturer</a>
-                                    </li>
-                                    <li>
-                                        <a href="add/si-prefix">Si Prefix</a>
-                                    </li>
                                     <li>
                                         <Link to="new-unit">Unit</Link>
                                     </li>
@@ -318,7 +312,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/user/messages">
+                                <a className="text-center" href="/user-messages">
                                     <strong>Read All Messages</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -403,7 +397,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/warehouse/stats">
+                                <a className="text-center" href="/warehouse-stats">
                                     <strong>See All Warehouses</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -461,7 +455,7 @@ const Header = (showSidebar) => {
                             </li>
                             <li className="divider"/>
                             <li>
-                                <a className="text-center" href="/user/alerts">
+                                <a className="text-center" href="/user-alerts">
                                     <strong>See All Alerts</strong>
                                     <i className="fa fa-angle-right"/>
                                 </a>
@@ -473,12 +467,22 @@ const Header = (showSidebar) => {
                             <i className="fa fa-user fa-fw"/> <i className="fa fa-caret-down"/>
                         </a>
                         <ul className="dropdown-menu dropdown-user">
-                            <li><a href="/user/profile"><i className="fa fa-user fa-fw"/> My Profile</a>
+                            <li><a href="/user-profile"><i className="fa fa-user fa-fw"/> My Profile</a>
                             </li>
-                            <li><a href="/user/settings"><i className="fa fa-gear fa-fw"/> Settings</a>
+                            <li><a href="/user-settings"><i className="fa fa-gear fa-fw"/> Settings</a>
                             </li>
                             <li className="divider"/>
-                            <li><a href="/user/logout"><i className="fa fa-sign-out fa-fw"/> Logout</a>
+                            <li><a href="/user-logout"><i className="fa fa-sign-out fa-fw"/> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="dropdown">
+                        <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i className="fa fa-question-circle fa-fw"/><i className="fa fa-caret-down"/>
+                        </a>
+                        <ul className="dropdown-menu dropdown-user">
+                            <li>
+                                <Link to="about">About</Link>
                             </li>
                         </ul>
                     </li>
