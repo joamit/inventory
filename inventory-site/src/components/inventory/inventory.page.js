@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 class InventoryPage extends React.Component {
     constructor(props, context) {
         super(props, context);
+        console.log(props);
     }
 
 
@@ -19,7 +20,10 @@ class InventoryPage extends React.Component {
 InventoryPage.propTypes = {};
 
 function mapStateToProps(state) {
-    return state;
+    return {
+        loading: state.updatedState.ajaxCallsInProgress > 0,
+        showSidebar: state.updatedState.showSidebar
+    };
 }
 
 export default connect(mapStateToProps)(InventoryPage);
