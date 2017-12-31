@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "../common/header";
+import {connect} from "react-redux";
 
 
 class HomePage extends React.Component {
@@ -104,4 +105,11 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+function mapStateToProps(state) {
+    return {
+        loading: state.updatedState.ajaxCallsInProgress > 0,
+        showSidebar: state.updatedState.showSidebar
+    };
+}
+
+export default connect(mapStateToProps)(HomePage);
